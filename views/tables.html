@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <% include htm/header.html %>
+
+    <link href="css/tables.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+	
+    <div id="wrapper">
+
+        
+
+        <div id="page-wrapper" style="margin:0;">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 style="float:left;">Tables</h2>
+                    <h3 style="float:right;">
+                    <a href="javascript:;" id="createcode">Create Code</a>
+                    <a href="javascript:;" id="addicon" style="padding-left:20px;">+Add to...</a>
+                    </h3>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6" style="width:100%;">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            set offer
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th width="50">#</th>
+                                            <th>icon</th>
+                                            <th>title</th>
+                                            <th>url</th>
+                                            <th width="100">edit|delete</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% var rows = ['success', 'info', 'warning', 'danger']; %>
+                                        <% for(var i=0; i<data.length; i++) { %>
+                                            <tr class="<%= rows[i%4] %>">
+                                                <td width="50" id="<%= data[i].id %>"><input type="checkbox"></td>
+                                                <td><img src="<%= data[i].url %>" width="30"></td>
+                                                <td><%= data[i].title.substr(0,20) %></td>
+                                                <td><%= data[i].link %></td>
+                                                <td width="100">
+                                                    <a class="editicon" href="javascript:;" data-id="<%= data[i].id %>">edit</a> | 
+                                                    <a href="/api/data/delete/<%= data[i].id %>">delete</a>
+                                                </td>
+                                            </tr>
+                                        <% } %>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- /.table-responsive -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-6 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <% include htm/footer.html %>
+
+    <% include htm/itemtemp.html %>
+
+    <script src="js/tables.js"></script>
+
+    <script id="grid-item" type="text/template">
+    {{ for (var i = 0, l = it.length; i < l; i++) { }}
+        <li class="ui-state-default widget-tab-item ui-sortable-handle" data-id="{{=it[i].id}}" data-title="{{=it[i].title}}" data-link="{{=it[i].link}}" data-url="{{=it[i].url}}"> 
+            <div class="site-link"> 
+                <div class="site-link-image"> 
+                    <img class="lazyload" src="{{=it[i].url}}" width="48" height="48"> 
+                </div> 
+                <div class="site-link-title">{{=it[i].title}}</div> 
+            </div>
+            <div class="delete">X</div>
+        </li>
+    {{ } }}
+    </script>
+
+</body>
+</html>

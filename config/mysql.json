@@ -1,0 +1,9 @@
+{
+	"host"     : "10.1.20.222",
+	"user"     : "elex",
+	"password" : "MhxzKhl123.",
+	"port"     : 3307,
+	"charset"  : "utf8",
+	"database" : "ares",
+	"insecureAuth" : true
+}

@@ -1,0 +1,101 @@
+<div class="mask"></div>
+<div class="mask-two"></div>
+
+<div class="dialogue" id="dialogue1">
+    <div class="dialogue-box">
+        <div class="dialogue-close">×</div>
+        <div class="dialogue-header">
+            Create Code
+        </div>
+        <div class="dataBox">
+            <div class="data-parent" id="dataParent">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group" style="margin-bottom:5px;">
+                        <div class="col-sm-10" style="padding-left:50px;">
+                            <div class="form-group" style="margin-bottom:5px;">
+                                <div class="col-sm-2 control-label"><span style="color:red;">*</span>Partner</div>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control form-short data-promote_red-content" id="partner">
+                                    <span class="type-x"><input type="radio" name="t1" checked="" value="1">big</span>
+                                    <span class="type-x"><input type="radio" name="t1" value="2">small</span>
+                                    <input type="hidden" id="type" value="1">
+                                </div>    
+                                <div class="col-sm-2 control-label" style="margin-top:10px;">Width*Height</div>
+                                <div class="col-sm-10" style="margin-top:10px;">    
+                                    <input type="text" class="form-control form-short" style="width:100px;" id="width" placeholder="660"> X
+                                    <input type="text" class="form-control form-short" style="width:100px;" id="height" placeholder="178">
+                                    <button type="button" class="btn btn-primary"  id="checkout" style="margin-left:20px;">Check out</button>
+                                    <button type="button" class="btn btn-primary"  id="createcodeed">Create Code</button>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="gridBox">
+                        <ul id="sortable" class="widget-tab clearfix"></ul>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <iframe id="showicon" src="" frameborder="1" allowtransparency="true" vspace="0" hspace="0" marginheight="0" marginwidth="0" width="876" height="200"></iframe>
+
+    </div>
+</div>
+
+<div class="dialogue" id="dialogue2">
+    <div class="dialogue-box">
+        <div class="dialogue-close">×</div>
+        <div class="dialogue-header" id="edit_title">
+            Add icon
+        </div>
+        <div class="dataBox">
+            <div class="data-parent" id="dataParent">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label data-title">title</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control data-title-content" id="addtitle">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label data-link">link</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control data-link-content" id="addlink">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label data-shortlink">picture url</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control data-shortlink-content" id="addurl">
+                        </div>
+                    </div>                        
+
+                    <div class="form-group save-button">
+                        <div class="col-sm-10">
+                            <button type="button" class="btn btn-default" id="dialogueCancel">cancel</button>
+                        </div>
+                        <div class="col-sm-2 control-label">
+                            <button type="button" class="btn btn-primary"  id="dialogueSave">save</button>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="dialogue" id="dialogue3" style="z-index:3000;">
+    <div class="dialogue-box">
+        <div class="dialogue-close">×</div>
+        <div class="dialogue-header">
+            Copy the code
+        </div>
+        <div class="dataBox">
+            <textarea id="showCodeBlock" style="width:876px;height:300px;"></textarea>
+        </div>
+    </div>
+</div>
